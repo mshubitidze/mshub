@@ -18,7 +18,11 @@ export default function Home() {
             {l}
           </button>
         ))}
-        {x.length === 0 && <a href="https://x.com/_mshub">x</a>}
+        {x.length === 0 && (
+          <a href="https://x.com/_mshub" target="_blank" rel="noreferrer">
+            x
+          </a>
+        )}
       </div>
       <div className="h-10">
         {gh.split("").map((l, idx) => (
@@ -31,7 +35,15 @@ export default function Home() {
             {l}
           </button>
         ))}
-        {gh.length === 0 && <a href="https://github.com/mshubitidze">gh</a>}
+        {gh.length === 0 && (
+          <a
+            href="https://github.com/mshubitidze"
+            target="_blank"
+            rel="noreferrer"
+          >
+            gh
+          </a>
+        )}
       </div>
     </main>
   );
