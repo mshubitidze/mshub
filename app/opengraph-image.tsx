@@ -1,14 +1,14 @@
-import { ImageResponse } from "next/og";
+import { ImageResponse } from 'next/og';
 
-export const alt = "mshub";
+export const alt = 'mshub';
 export const size = {
   width: 1200,
   height: 630,
 };
 
-export const runtime = "edge";
+export const runtime = 'edge';
 
-export const contentType = "image/png";
+export const contentType = 'image/png';
 
 export default async function Image() {
   return new ImageResponse(
