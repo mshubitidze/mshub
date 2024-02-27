@@ -18,7 +18,7 @@ export function ModeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          {theme}
+          {theme ? theme : "system"}
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>

@@ -17,8 +17,8 @@ export async function POST(request: Request) {
   try {
     const verified = await verifySignature(request);
 
-    if (!process.env.WEBHOOK_SECRET) {
-      throw new Error("Missing WEBHOOK_SECRET");
+    if (!process.env.VERCEL_TOKEN) {
+      throw new Error("Missing VERCEL_TOKEN");
     }
 
     if (!verified) {
