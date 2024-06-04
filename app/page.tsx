@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="flex h-screen min-w-0 flex-auto flex-col">
+    <main className="flex min-w-0 flex-auto flex-col">
       <section className="mb-16 px-2">
         <h1 className="mb-2 text-2xl font-medium tracking-tighter">
           hi, i&apos;m misho
