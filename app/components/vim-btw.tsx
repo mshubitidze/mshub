@@ -26,7 +26,7 @@ export function VimBtw() {
             fill="currentColor"
             stroke="currentColor"
             strokeLinecap="square"
-            className="h-[30.5px] animate-pulse"
+            className="h-[30px] animate-pulse"
           >
             <rect width="12" height="24" />
           </svg>
