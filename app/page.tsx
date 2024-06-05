@@ -1,5 +1,4 @@
 import { VimBtw } from './components/vim-btw'
-import { Suspense } from 'react'
 import {
   ArrowUpRight,
   IconBadge,
@@ -14,15 +13,7 @@ export default function Home() {
         <h1 className="mb-2 text-2xl font-medium tracking-tighter">
           hi, i&apos;m misho
         </h1>
-        <Suspense
-          fallback={
-            <p className="mb-8 inline-flex animate-pulse bg-neutral-200 text-sm no-underline">
-              &nbsp;&nbsp;
-            </p>
-          }
-        >
-          <VimBtw />
-        </Suspense>
+        <VimBtw />
         <p className="prose prose-neutral max-w-2xl dark:prose-invert">
           i&apos;m a <span className="animate-pulse">fullstack</span> developer
           mainly working with{' '}
