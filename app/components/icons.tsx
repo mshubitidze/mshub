@@ -10,15 +10,13 @@ export function IconBadge({
   svg: React.ReactNode
 }) {
   return (
-    <span className="not-prose">
-      <Link
-        className="inline-flex items-center rounded border border-neutral-600 bg-neutral-800 p-1 text-sm no-underline"
-        href={href}
-      >
-        {svg}
-        {label}
-      </Link>
-    </span>
+    <Link
+      className="inline-flex items-center rounded border border-stone-400 bg-stone-100 p-1 text-sm no-underline dark:border-stone-400 dark:bg-stone-800"
+      href={href}
+    >
+      {svg}
+      {label}
+    </Link>
   )
 }
 

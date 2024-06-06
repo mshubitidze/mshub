@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { SiteHeader } from './components/site-header'
+import { SiteFooter } from './components/site-footer'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -45,6 +46,10 @@ export const metadata: Metadata = {
   },
 }
 
+function cx(...classNames: string[]) {
+  return classNames.filter(Boolean).join(' ')
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,10 +58,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} container mx-auto max-w-2xl antialiased`}
+        className={cx(
+          geistSans.variable,
+          geistMono.variable,
+          'container mx-auto max-w-2xl antialiased'
+        )}
       >
         <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   )

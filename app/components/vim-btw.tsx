@@ -6,7 +6,7 @@ import { useState } from 'react'
 export function VimBtw() {
   const [btw, setBtw] = useState(false)
   return (
-    <p className="prose prose-neutral mb-8 inline-flex dark:prose-invert">
+    <p className="prose prose-stone mb-8 inline-flex dark:prose-invert">
       {btw ? (
         <span>
           i use{' '}
