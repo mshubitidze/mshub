@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
-import { SiteHeader } from './components/site-header'
-import { SiteFooter } from './components/site-footer'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -16,16 +14,16 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://mshub.dev'),
   title: {
-    default: 'Misho Shubitidze',
-    template: '%s | Misho Shubitidze',
+    default: 'misho shubitidze',
+    template: '%s | misho shubitidze',
   },
   description: 'i use vim btw',
   openGraph: {
-    title: 'Misho Shubitidze',
+    title: 'misho shubitidze',
     description: 'i use vim btw',
     images: '/og',
     url: 'https://mshub.dev',
-    siteName: 'Misho Shubitidze',
+    siteName: 'misho shubitidze',
     locale: 'en_US',
     type: 'website',
   },
@@ -41,13 +39,9 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Misho Shubitidze',
+    title: 'misho shubitidze',
     card: 'summary_large_image',
   },
-}
-
-function cx(...classNames: string[]) {
-  return classNames.filter(Boolean).join(' ')
 }
 
 export default function RootLayout({
@@ -57,16 +51,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cx(
-          geistSans.variable,
-          geistMono.variable,
-          'container mx-auto max-w-2xl antialiased'
-        )}
-      >
-        <SiteHeader />
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
-        <SiteFooter />
       </body>
     </html>
   )

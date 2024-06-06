@@ -7,8 +7,12 @@ export async function GET() {
 
   return new ImageResponse(
     (
-      <div tw="bg-[#0a0a0a] text-[#e5e5e5] text-7xl flex items-center justify-center w-full h-full">
-        mshub.dev
+      <div tw="bg-[#09090b] text-[#fafafa] flex w-full h-full items-end p-32 justify-between">
+        <div tw="flex flex-col">
+          <h1 tw="text-5xl">misho shubitidze</h1>
+          <p tw="text-4xl">front-end developer</p>
+        </div>
+        <p tw="text-5xl">mshub.dev</p>
       </div>
     ),
     {

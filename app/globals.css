@@ -2,20 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #fafaf9;
-  --foreground: #0c0a09;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0c0a09;
-    --foreground: #fafaf9;
+@layer base {
+  * {
+    @apply border-zinc-400 dark:border-zinc-600;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-synthesis: none;
+  body {
+    @apply bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50;
+  }
 }

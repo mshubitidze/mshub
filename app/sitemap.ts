@@ -1,8 +1,6 @@
 export default function sitemap() {
-  let routes = ['', '/blog'].map((route) => ({
-    url: `https://mshub.dev${route}`,
+  return {
+    url: `https://mshub.dev`,
     lastModified: new Date().toISOString().split('T')[0],
-  }))
-
-  return routes
+  }
 }
