@@ -6,7 +6,7 @@ export default function Home() {
       <div>
         <div className="mb-16">
           <h1 className="text-lg font-bold">misho shubitidze</h1>
-          <p className="font-semibold text-zinc-500">front-end developer</p>
+          <p className="font-semibold text-zinc-400">front-end developer</p>
         </div>
       </div>
       <div>
@@ -19,7 +19,10 @@ export default function Home() {
               duration: 0.4,
             }}
           >
-            i use vim
+            i use{' '}
+            <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#16B0ED,45%,#367533,55%,#88C649)] bg-[length:200%_100%] bg-clip-text text-transparent">
+              neovim
+            </span>
           </MotionP>
           <MotionP
             initial={{ opacity: 0, y: -40 }}
