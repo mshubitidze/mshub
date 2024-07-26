@@ -6,9 +6,7 @@ export default function Home() {
       <div>
         <div className="mb-16">
           <h1 className="text-lg font-bold">misho shubitidze</h1>
-          <p className="font-semibold text-zinc-400">
-            react / next.js developer
-          </p>
+          <p className="font-semibold text-zinc-400">Design Engineer</p>
         </div>
       </div>
       <div>
