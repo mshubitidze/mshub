@@ -1,2 +1,2 @@
 export const cv =
-  'https://utfs.io/f/d138f42c-63b4-490a-8460-1bf6b6a64383-onq78x.pdf'
+  'https://utfs.io/f/b124e4ee-d4bb-45a4-a30c-11732fd3b602-ommm27.pdf'
