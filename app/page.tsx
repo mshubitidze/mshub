@@ -27,6 +27,7 @@ export default function Home() {
             i build stuff with{' '}
             <a
               className="underline underline-offset-4"
+              target="_blank"
               href="https://react.dev"
             >
               react
@@ -34,12 +35,13 @@ export default function Home() {
             and{' '}
             <a
               className="underline underline-offset-4"
+              target="_blank"
               href="https://nextjs.org"
             >
               next.js
             </a>
             , using{' '}
-            <a href="https://neovim.io/">
+            <a href="https://neovim.io/" target="_blank">
               <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#16B0ED,45%,#367533,55%,#88C649)] bg-[length:200%_100%] bg-clip-text text-transparent">
                 neovim
               </span>
@@ -68,3 +70,5 @@ export default function Home() {
     </main>
   )
 }
+
+export const dynamic = 'force-static'
