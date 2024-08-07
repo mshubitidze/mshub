@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 
 const geistSans = localFont({
-  src: './lib/fonts/GeistVF.woff',
+  src: '../lib/fonts/GeistVF.woff',
   variable: '--font-geist-sans',
 })
 const geistMono = localFont({
-  src: './lib/fonts/GeistMonoVF.woff',
+  src: '../lib/fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
 })
 
@@ -17,10 +18,10 @@ export const metadata: Metadata = {
     default: 'misho shubitidze',
     template: '%s | misho shubitidze',
   },
-  description: 'i use vim btw',
+  description: 'design engineer',
   openGraph: {
     title: 'misho shubitidze',
-    description: 'i use vim btw',
+    description: 'design engineer',
     images: '/og',
     url: 'https://mshub.dev',
     siteName: 'misho shubitidze',
@@ -52,7 +53,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -1,53 +1,69 @@
-import { MotionP } from './lib/framer'
+import Image from 'next/image'
+import Link from 'next/link'
+// import { Onlyfans } from '../components/onlyfans'
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
-      <div>
-        <div className="mb-16">
+    <main className="mx-auto flex w-full max-w-screen-sm flex-1 flex-col gap-16 px-4 pt-20 font-mono">
+      <div className="flex items-center space-x-4">
+        <Link href="/">
+          <Image
+            src="https://utfs.io/f/17cc8327-6b9f-4eb0-b3b9-ac8b8ca8caef-v317j9.png"
+            alt="misho shubitidze's profile picture"
+            width={64}
+            height={64}
+            className="rounded-full object-cover transition-all hover:scale-105"
+          />
+        </Link>
+        <div>
           <h1 className="text-lg font-bold">misho shubitidze</h1>
-          <p className="font-semibold text-zinc-400">design engineer</p>
+          <p className="font-semibold text-muted-foreground">design engineer</p>
         </div>
       </div>
       <div>
         <h2 className="text-lg font-bold">about me</h2>
-        <div className="flex items-center">
-          <MotionP
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 0.4,
-            }}
-          >
-            i use{' '}
-            <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#16B0ED,45%,#367533,55%,#88C649)] bg-[length:200%_100%] bg-clip-text text-transparent">
-              neovim
-            </span>
-          </MotionP>
-          <MotionP
-            initial={{ opacity: 0, y: -40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              ease: 'backOut',
-              delay: 0.7,
-              duration: 0.2,
-            }}
-          >
+        <div className="flex items-center text-muted-foreground">
+          <p>
+            i build stuff with{' '}
+            <a
+              className="underline underline-offset-4"
+              href="https://react.dev"
+            >
+              react
+            </a>{' '}
+            and{' '}
+            <a
+              className="underline underline-offset-4"
+              href="https://nextjs.org"
+            >
+              next.js
+            </a>
+            , using{' '}
+            <a href="https://neovim.io/">
+              <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#16B0ED,45%,#367533,55%,#88C649)] bg-[length:200%_100%] bg-clip-text text-transparent">
+                neovim
+              </span>
+            </a>
             , btw
-          </MotionP>
+          </p>
         </div>
       </div>
-      <div className="my-16">
-        <a href="https://x.com/_mshub" target="_blank">
-          twitter &rarr;
+      <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8">
+        <a
+          href="https://x.com/_mshub"
+          target="_blank"
+          className="whitespace-nowrap"
+        >
+          x(twitter) &rarr;
         </a>
         <a
-          className="ml-8"
           href="https://github.com/mshubitidze"
           target="_blank"
+          className="whitespace-nowrap"
         >
           github &rarr;
         </a>
+        {/* <Onlyfans /> */}
       </div>
     </main>
   )
