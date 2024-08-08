@@ -1,3 +1,4 @@
+import { siteConfig } from '@/config/site'
 import Image from 'next/image'
 import Link from 'next/link'
 // import { Onlyfans } from '../components/onlyfans'
@@ -9,15 +10,17 @@ export default function Home() {
         <Link href="/">
           <Image
             src="https://utfs.io/f/17cc8327-6b9f-4eb0-b3b9-ac8b8ca8caef-v317j9.png"
-            alt="misho shubitidze's profile picture"
+            alt={`${siteConfig.name}'s profile picture`}
             width={64}
             height={64}
             className="rounded-full object-cover transition-all hover:scale-105"
           />
         </Link>
         <div>
-          <h1 className="text-lg font-bold">misho shubitidze</h1>
-          <p className="font-semibold text-muted-foreground">design engineer</p>
+          <h1 className="text-lg font-bold">{siteConfig.name}</h1>
+          <p className="font-semibold text-muted-foreground">
+            {siteConfig.description}
+          </p>
         </div>
       </div>
       <div>

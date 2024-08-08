@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import { siteConfig } from '@/config/site'
 
 const geistSans = localFont({
   src: '../lib/fonts/GeistVF.woff',
@@ -15,16 +16,16 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://mshub.dev'),
   title: {
-    default: 'misho shubitidze',
-    template: '%s | misho shubitidze',
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: 'design engineer',
+  description: siteConfig.description,
   openGraph: {
-    title: 'misho shubitidze',
-    description: 'design engineer',
+    title: siteConfig.name,
+    description: siteConfig.description,
     images: '/og',
     url: 'https://mshub.dev',
-    siteName: 'misho shubitidze',
+    siteName: siteConfig.name,
     locale: 'en_US',
     type: 'website',
   },
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'misho shubitidze',
+    title: siteConfig.name,
     card: 'summary_large_image',
   },
 }

@@ -1,3 +1,4 @@
+import { siteConfig } from '@/config/site'
 import { ImageResponse } from 'next/og'
 
 export async function GET() {
@@ -7,12 +8,21 @@ export async function GET() {
 
   return new ImageResponse(
     (
-      <div tw="bg-[#09090b] text-[#fafafa] flex w-full h-full items-end p-32 justify-between">
-        <div tw="flex flex-col">
-          <h1 tw="text-5xl">misho shubitidze</h1>
-          <p tw="text-4xl">front-end developer</p>
+      <div tw="text-[#fafafa] bg-[#09090b] flex w-full h-full items-end px-32 py-28 justify-between">
+        <div tw="flex items-center justify-between w-full">
+          <div tw="flex items-center">
+            <img
+              src="https://utfs.io/f/17cc8327-6b9f-4eb0-b3b9-ac8b8ca8caef-v317j9.png"
+              alt={`${siteConfig.name}'s profile picture`}
+              tw="w-[240px] h-[240px] rounded-full"
+            />
+            <div tw="flex flex-col ml-16">
+              <h1 tw="text-5xl">{siteConfig.name}</h1>
+              <p tw="text-4xl">{siteConfig.description}</p>
+            </div>
+          </div>
+          <p tw="text-5xl">mshub.dev</p>
         </div>
-        <p tw="text-5xl">mshub.dev</p>
       </div>
     ),
     {
