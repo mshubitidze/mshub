@@ -3,12 +3,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'utfs.io',
+        protocol: "https",
+        hostname: "utfs.io",
       },
       {
-        protocol: 'https',
-        hostname: 'www.google.com',
+        protocol: "https",
+        hostname: "www.google.com",
       },
     ],
   },
@@ -17,6 +17,6 @@ const nextConfig = {
       fullUrl: true,
     },
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;

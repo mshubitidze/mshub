@@ -2,10 +2,10 @@ export default function robots() {
   return {
     rules: [
       {
-        userAgent: '*',
+        userAgent: "*",
       },
     ],
-    sitemap: 'https://mshub.dev/sitemap.xml',
-    host: 'https://mshub.dev',
-  }
+    sitemap: "https://mshub.dev/sitemap.xml",
+    host: "https://mshub.dev",
+  };
 }

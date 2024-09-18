@@ -4,8 +4,8 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTrigger,
-} from '@/components/ui/dialog'
-import Image from 'next/image'
+} from "@/components/ui/dialog";
+import Image from "next/image";
 
 export function Onlyfans() {
   return (
@@ -28,5 +28,5 @@ export function Onlyfans() {
         </DialogHeader>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

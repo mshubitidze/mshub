@@ -1,6 +1,6 @@
-import { siteConfig } from '@/config/site'
-import Image from 'next/image'
-import Link from 'next/link'
+import { siteConfig } from "@/config/site";
+import Image from "next/image";
+import Link from "next/link";
 // import { Onlyfans } from '../components/onlyfans'
 
 export default function Home() {
@@ -17,34 +17,36 @@ export default function Home() {
           />
         </Link>
         <div>
-          <h1 className="text-lg font-bold">{siteConfig.name}</h1>
+          <h1 className="font-bold text-lg">{siteConfig.name}</h1>
           <p className="font-semibold text-muted-foreground">
             {siteConfig.description}
           </p>
         </div>
       </div>
       <div>
-        <h2 className="text-lg font-bold">about me</h2>
+        <h2 className="font-bold text-lg">about me</h2>
         <div className="flex items-center text-muted-foreground">
           <p>
-            i build stuff with{' '}
+            i build stuff with{" "}
             <a
               className="underline underline-offset-4"
               target="_blank"
+              rel="noreferrer"
               href="https://react.dev"
             >
               react
-            </a>{' '}
-            and{' '}
+            </a>{" "}
+            and{" "}
             <a
               className="underline underline-offset-4"
               target="_blank"
+              rel="noreferrer"
               href="https://nextjs.org"
             >
               next.js
             </a>
-            , using{' '}
-            <a href="https://neovim.io/" target="_blank">
+            , using{" "}
+            <a href="https://neovim.io/" target="_blank" rel="noreferrer">
               <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#16B0ED,45%,#367533,55%,#88C649)] bg-[length:200%_100%] bg-clip-text text-transparent">
                 neovim
               </span>
@@ -57,6 +59,7 @@ export default function Home() {
         <a
           href="https://x.com/_mshub"
           target="_blank"
+          rel="noreferrer"
           className="whitespace-nowrap"
         >
           x(twitter) &rarr;
@@ -64,6 +67,7 @@ export default function Home() {
         <a
           href="https://github.com/mshubitidze"
           target="_blank"
+          rel="noreferrer"
           className="whitespace-nowrap"
         >
           github &rarr;
@@ -71,7 +75,7 @@ export default function Home() {
         {/* <Onlyfans /> */}
       </div>
     </main>
-  )
+  );
 }
 
-export const dynamic = 'force-static'
+export const dynamic = "force-static";

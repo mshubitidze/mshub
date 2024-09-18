@@ -1,4 +1,4 @@
 export const siteConfig = {
-  name: 'misho shubitidze',
-  description: 'design engineer',
-}
+  name: "misho shubitidze",
+  description: "design engineer",
+};
