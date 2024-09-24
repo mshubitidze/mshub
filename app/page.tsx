@@ -1,3 +1,4 @@
+import { ImagePreviewText } from "@/components/image-preview-text";
 import { siteConfig } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,29 +29,41 @@ export default function Home() {
         <div className="flex items-center text-muted-foreground">
           <p>
             i build stuff with{" "}
-            <a
-              className="underline underline-offset-4"
-              target="_blank"
-              rel="noreferrer"
-              href="https://react.dev"
+            <ImagePreviewText
+              imageUrl="https://react.dev/images/og-home.png"
+              altText="React OG"
             >
-              react
-            </a>{" "}
+              <a
+                className="underline underline-offset-4"
+                target="_blank"
+                rel="noreferrer"
+                href="https://react.dev"
+              >
+                react
+              </a>
+            </ImagePreviewText>{" "}
             and{" "}
-            <a
-              className="underline underline-offset-4"
-              target="_blank"
-              rel="noreferrer"
-              href="https://nextjs.org"
+            <ImagePreviewText
+              imageUrl="https://assets.vercel.com/image/upload/front/nextjs/twitter-card.png"
+              altText="Next.js OG"
             >
-              next.js
-            </a>
+              <a
+                className="underline underline-offset-4"
+                target="_blank"
+                rel="noreferrer"
+                href="https://nextjs.org"
+              >
+                next.js
+              </a>
+            </ImagePreviewText>
             , using{" "}
-            <a href="https://neovim.io/" target="_blank" rel="noreferrer">
-              <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#16B0ED,45%,#367533,55%,#88C649)] bg-[length:200%_100%] bg-clip-text text-transparent">
-                neovim
-              </span>
-            </a>
+            <ImagePreviewText imageUrl="/neovim.png" altText="Neovim OG">
+              <a href="https://neovim.io/" target="_blank" rel="noreferrer">
+                <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#16B0ED,45%,#367533,55%,#88C649)] bg-[length:200%_100%] bg-clip-text text-transparent">
+                  neovim
+                </span>
+              </a>
+            </ImagePreviewText>
             , btw
           </p>
         </div>
@@ -62,7 +75,7 @@ export default function Home() {
           rel="noreferrer"
           className="whitespace-nowrap"
         >
-          x(twitter) &rarr;
+          x &rarr;
         </a>
         <a
           href="https://github.com/mshubitidze"

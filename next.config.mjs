@@ -8,7 +8,15 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "www.google.com",
+        hostname: "google.com",
+      },
+      {
+        protocol: "https",
+        hostname: "react.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.vercel.com",
       },
     ],
   },
