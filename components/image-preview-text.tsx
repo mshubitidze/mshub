@@ -19,7 +19,6 @@ export function ImagePreviewText({
   const containerRef = useRef<HTMLSpanElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  console.log(mouseX.get(), mouseY.get());
 
   const handleMouseMove = (event: React.MouseEvent<HTMLSpanElement>) => {
     if (containerRef.current) {
