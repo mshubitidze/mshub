@@ -2,16 +2,15 @@ import { ImagePreviewText } from "@/components/image-preview-text";
 import { siteConfig } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
-// import { Onlyfans } from '../components/onlyfans'
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-screen-sm flex-1 flex-col gap-16 px-4 pt-20 font-mono">
+    <main className="mx-auto flex w-full max-w-screen-sm flex-1 flex-col gap-16 px-4 pt-20">
       <div className="flex items-center space-x-4">
         <Link href="/">
           <Image
             src="https://utfs.io/f/17cc8327-6b9f-4eb0-b3b9-ac8b8ca8caef-v317j9.png"
-            alt={`${siteConfig.name}'s profile picture`}
+            alt={`${siteConfig.name}`}
             width={64}
             height={64}
             className="rounded-full object-cover transition-all hover:scale-105"
@@ -85,7 +84,6 @@ export default function Home() {
         >
           github &rarr;
         </a>
-        {/* <Onlyfans /> */}
       </div>
     </main>
   );

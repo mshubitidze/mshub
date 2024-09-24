@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 
 interface ImagePreviewTextProps {
@@ -18,15 +18,17 @@ export function ImagePreviewText({
   const [isHovering, setIsHovering] = useState(false);
   const containerRef = useRef<HTMLSpanElement>(null);
   const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+
+  const springX = useSpring(mouseX, {
+    stiffness: 100,
+    damping: 20,
+  });
 
   const handleMouseMove = (event: React.MouseEvent<HTMLSpanElement>) => {
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
       const x = event.clientX - rect.left - rect.width / 2;
-      const y = event.clientY - rect.top - rect.height / 2;
       mouseX.set(x);
-      mouseY.set(y);
     }
   };
 
@@ -41,8 +43,7 @@ export function ImagePreviewText({
       <motion.span
         className="absolute z-10 h-32 w-64 pointer-events-none"
         style={{
-          x: mouseX,
-          y: mouseY,
+          x: springX,
           perspective: 1000,
           bottom: "100%",
           left: "50%",
@@ -55,7 +56,11 @@ export function ImagePreviewText({
             ? { opacity: 1, scale: 1, y: 0 }
             : { opacity: 0, scale: 0.8, y: 20 }
         }
-        transition={{ duration: 0.2 }}
+        transition={{
+          opacity: { duration: 0.2 },
+          scale: { type: "spring", stiffness: 300, damping: 20 },
+          y: { type: "spring", stiffness: 300, damping: 20 },
+        }}
       >
         <Image
           src={imageUrl}
