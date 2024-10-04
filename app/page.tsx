@@ -1,32 +1,34 @@
 import { ImagePreviewText } from "@/components/image-preview-text";
 import { siteConfig } from "@/config/site";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="mx-auto flex w-full max-w-screen-sm flex-1 flex-col gap-16 px-4 pt-20">
-      <div className="flex items-center space-x-4">
-        <Link href="/">
-          <Image
-            src="https://utfs.io/f/17cc8327-6b9f-4eb0-b3b9-ac8b8ca8caef-v317j9.png"
-            alt={`${siteConfig.name}`}
-            width={64}
-            height={64}
-            className="rounded-full object-cover transition-all hover:scale-105"
-          />
-        </Link>
-        <div>
-          <h1 className="font-bold text-lg">{siteConfig.name}</h1>
-          <p className="font-semibold text-muted-foreground">
-            {siteConfig.description}
-          </p>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center space-x-4">
+          <Link href="/">
+            <Image
+              src="https://utfs.io/f/17cc8327-6b9f-4eb0-b3b9-ac8b8ca8caef-v317j9.png"
+              alt={`${siteConfig.name}`}
+              width={64}
+              height={64}
+              className="rounded-full object-cover transition-all hover:scale-105"
+            />
+          </Link>
+          <div>
+            <h1 className="font-bold text-lg">{siteConfig.name}</h1>
+            <p className="font-semibold text-muted-foreground">
+              {siteConfig.description}
+            </p>
+          </div>
         </div>
       </div>
       <div>
         <h2 className="font-bold text-lg">about me</h2>
         <div className="flex items-center text-muted-foreground">
-          <p>
+          <p className="text-balance">
             i build stuff with{" "}
             <ImagePreviewText
               imageUrl="https://react.dev/images/og-home.png"
@@ -75,6 +77,14 @@ export default function Home() {
           className="whitespace-nowrap"
         >
           x &rarr;
+        </a>
+        <a
+          href="https://www.linkedin.com/in/mikheil-shubitidze/"
+          target="_blank"
+          rel="noreferrer"
+          className="whitespace-nowrap"
+        >
+          linkedin &rarr;
         </a>
         <a
           href="https://github.com/mshubitidze"
