@@ -7,7 +7,7 @@ export async function GET() {
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
-    <div tw="text-[#fafafa] bg-[#09090b] flex w-full h-full items-end px-32 py-28 justify-between">
+    <div tw="text-[#fafafa] bg-[#171717] flex w-full h-full items-end px-32 py-28 justify-between">
       <div tw="flex items-center justify-between w-full">
         <div tw="flex items-center">
           <img
