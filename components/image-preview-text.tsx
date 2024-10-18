@@ -41,7 +41,7 @@ export function ImagePreviewText({
       onMouseMove={handleMouseMove}
     >
       <motion.span
-        className="absolute z-10 h-32 w-64 pointer-events-none"
+        // className="absolute z-10 h-32 w-64 pointer-events-none"
         style={{
           x: springX,
           perspective: 1000,
@@ -49,6 +49,11 @@ export function ImagePreviewText({
           left: "50%",
           translateX: "-50%",
           marginBottom: "8px",
+          position: "absolute",
+          zIndex: 10,
+          height: "8rem",
+          width: "16rem",
+          pointerEvents: "none",
         }}
         initial={{ opacity: 0, scale: 0.8, y: 20 }}
         animate={
