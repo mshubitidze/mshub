@@ -1,3 +1,3 @@
 export const cv =
-  "https://utfs.io/f/b124e4ee-d4bb-45a4-a30c-11732fd3b602-ommm27.pdf";
+  "https://utfs.io/f/IGFTocPiQWn2KQsweYOudQag4WvJcjP9DlMbqpnEH8FTtUe2";
 export const github = "https://github.com/mshubitidze";
