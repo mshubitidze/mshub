@@ -72,11 +72,11 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </ViewTransitions>
-        <Script
+        <script
           defer
           data-site-id="www.mshub.dev"
           src="https://assets.onedollarstats.com/tracker.js"
-        />
+        ></script>
       </body>
     </html>
   );
