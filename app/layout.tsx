@@ -74,7 +74,7 @@ export default function RootLayout({
         </ViewTransitions>
         <Script
           defer
-          data-site-id="mshub.dev"
+          data-site-id="www.mshub.dev"
           src="https://assets.onedollarstats.com/tracker.js"
         />
       </body>
