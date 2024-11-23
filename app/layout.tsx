@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 import { ViewTransitions } from "next-view-transitions";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "../lib/fonts/GeistVF.woff",
@@ -71,6 +72,11 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </ViewTransitions>
+        <Script
+          defer
+          data-site-id="mshub.dev"
+          src="https://assets.onedollarstats.com/tracker.js"
+        />
       </body>
     </html>
   );
