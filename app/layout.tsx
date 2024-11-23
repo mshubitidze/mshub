@@ -1,19 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 import { ViewTransitions } from "next-view-transitions";
 import Script from "next/script";
-
-const geistSans = localFont({
-  src: "../lib/fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "../lib/fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-});
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mshub.dev"),
@@ -61,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-mono`}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-mono`}>
         <ViewTransitions>
           <ThemeProvider
             attribute="class"
