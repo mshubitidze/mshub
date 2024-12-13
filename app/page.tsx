@@ -23,75 +23,63 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <h2 className="font-bold text-lg mt-16">about me</h2>
-      <div className="flex items-center text-muted-foreground">
-        <p className="text-balance">
-          i build stuff with{" "}
-          <ImagePreviewText
-            imageUrl="https://react.dev/images/og-home.png"
-            altText="React OG"
-          >
-            <a
-              className="underline underline-offset-4"
-              target="_blank"
-              rel="noreferrer"
-              href="https://react.dev"
+      <section className="mt-16">
+        <h2 className="font-bold text-lg">about me</h2>
+        <div className="flex items-center text-muted-foreground">
+          <p className="text-balance">
+            i build stuff with{" "}
+            <ImagePreviewText
+              imageUrl="https://react.dev/images/og-home.png"
+              altText="React OG"
             >
-              react
-            </a>
-          </ImagePreviewText>{" "}
-          and{" "}
-          <ImagePreviewText
-            imageUrl="https://assets.vercel.com/image/upload/front/nextjs/twitter-card.png"
-            altText="Next.js OG"
-          >
-            <a
-              className="underline underline-offset-4"
-              target="_blank"
-              rel="noreferrer"
-              href="https://nextjs.org"
+              <a
+                className="underline underline-offset-4"
+                target="_blank"
+                rel="noreferrer"
+                href="https://react.dev"
+              >
+                react
+              </a>
+            </ImagePreviewText>{" "}
+            and{" "}
+            <ImagePreviewText
+              imageUrl="https://assets.vercel.com/image/upload/front/nextjs/twitter-card.png"
+              altText="Next.js OG"
             >
-              next.js
-            </a>
-          </ImagePreviewText>
-          , using{" "}
-          <ImagePreviewText imageUrl="/neovim.png" altText="Neovim OG">
-            <a href="https://neovim.io/" target="_blank" rel="noreferrer">
-              <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#16B0ED,45%,#367533,55%,#88C649)] bg-[length:200%_100%] bg-clip-text text-transparent">
-                neovim
-              </span>
-            </a>
-          </ImagePreviewText>
-          , btw
-        </p>
-      </div>
-      <div className="flex flex-wrap gap-x-8 gap-y-4 mt-16">
-        <a
-          href="https://x.com/_mshub"
-          target="_blank"
-          rel="noreferrer"
-          className="whitespace-nowrap"
-        >
-          x &rarr;
-        </a>
-        <a
-          href="https://www.linkedin.com/in/mikheil-shubitidze/"
-          target="_blank"
-          className="whitespace-nowrap"
-        >
-          linkedin &rarr;
-        </a>
-        <a
-          href="https://github.com/mshubitidze"
-          target="_blank"
-          rel="noreferrer"
-          className="whitespace-nowrap"
-        >
-          github &rarr;
-        </a>
-      </div>
+              <a
+                className="underline underline-offset-4"
+                target="_blank"
+                rel="noreferrer"
+                href="https://nextjs.org"
+              >
+                next.js
+              </a>
+            </ImagePreviewText>
+            , using{" "}
+            <ImagePreviewText imageUrl="/neovim.png" altText="Neovim OG">
+              <a href="https://neovim.io/" target="_blank" rel="noreferrer">
+                <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#16B0ED,45%,#367533,55%,#88C649)] bg-[length:200%_100%] bg-clip-text text-transparent">
+                  neovim
+                </span>
+              </a>
+            </ImagePreviewText>
+            , btw
+          </p>
+        </div>
+      </section>
+      <section className="flex flex-wrap gap-x-6 gap-y-2 mt-16">
+        {siteConfig.socialLinks.map(({ href, label }) => (
+          <a
+            key={href}
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            className="whitespace-nowrap px-2 py-1"
+          >
+            {label} &rarr;
+          </a>
+        ))}
+      </section>
     </main>
   );
 }
-
-export const dynamic = "force-static";

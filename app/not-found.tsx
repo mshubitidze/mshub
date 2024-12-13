@@ -1,8 +1,8 @@
 export default function NotFound() {
   return (
-    <main className="mx-auto w-full max-w-5xl flex-1 px-4 pt-20">
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        404 - Page Not Found
+    <main className="mx-auto max-w-2xl px-4 pt-20">
+      <h1 className="text-2xl font-semibold tracking-tighter text-center">
+        404 - Not Found
       </h1>
     </main>
   );

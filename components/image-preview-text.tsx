@@ -41,7 +41,6 @@ export function ImagePreviewText({
       onMouseMove={handleMouseMove}
     >
       <motion.span
-        // className="absolute z-10 h-32 w-64 pointer-events-none"
         style={{
           x: springX,
           perspective: 1000,
