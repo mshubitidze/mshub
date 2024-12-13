@@ -67,14 +67,14 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="flex flex-wrap gap-x-6 gap-y-2 mt-16">
+      <section className="flex flex-wrap gap-x-8 gap-y-2 mt-16">
         {siteConfig.socialLinks.map(({ href, label }) => (
           <a
             key={href}
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="whitespace-nowrap px-2 py-1"
+            className="whitespace-nowrap"
           >
             {label} &rarr;
           </a>
