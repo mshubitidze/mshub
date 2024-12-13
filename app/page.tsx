@@ -18,7 +18,7 @@ export default function Home() {
         </Link>
         <div>
           <h1 className="font-bold text-lg">{siteConfig.name}</h1>
-          <p className="font-semibold text-muted-foreground">
+          <p className="font-medium text-muted-foreground">
             {siteConfig.description}
           </p>
         </div>
