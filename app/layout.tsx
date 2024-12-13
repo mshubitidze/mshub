@@ -3,18 +3,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 import { ViewTransitions } from "next-view-transitions";
-import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 export const metadata: Metadata = {
   metadataBase: new URL("https://mshub.dev"),
   title: {
@@ -61,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-mono`}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-mono`}>
         <ViewTransitions>
           <ThemeProvider
             attribute="class"
