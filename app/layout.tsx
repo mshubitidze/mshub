@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import { ViewTransitions } from "next-view-transitions";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { SnowfallComponent } from "@/components/snowfall";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mshub.dev"),
@@ -61,6 +62,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <SnowfallComponent />
           </ThemeProvider>
         </ViewTransitions>
         <script
