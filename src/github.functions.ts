@@ -40,7 +40,7 @@ type CalendarResponse = {
 };
 
 /** Fetching from GitHub on every visit is unnecessary; the calendar barely moves within hours. */
-const cacheKey = new Request("https://mshub.dev/_cache/github-contributions");
+const cacheKey = new Request("https://mshub.dev/_cache/github-contributions-with-private");
 const cacheSeconds = 6 * 60 * 60;
 
 /** Last year's GitHub contribution calendar, or `null` when GitHub can't be reached. */
