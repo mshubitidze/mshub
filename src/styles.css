@@ -7,6 +7,9 @@
   --color-foreground: var(--foreground);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-accent: var(--accent);
+  /* A project's brand hue and chroma at a lightness that reads on the current theme. */
+  --color-brand: oklch(from var(--brand) var(--brand-lightness) c h);
 }
 
 :root {
@@ -16,6 +19,8 @@
   --foreground: oklch(0.435 0.043 279.3); /* text */
   --muted-foreground: oklch(0.547 0.034 279.1); /* subtext0 */
   --border: oklch(0.808 0.017 271.2); /* surface1 */
+  --accent: oklch(0.555 0.25 297); /* mauve */
+  --brand-lightness: 0.55;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,12 +30,22 @@
     --foreground: oklch(0.879 0.043 272.3); /* text */
     --muted-foreground: oklch(0.751 0.04 273.9); /* subtext0 */
     --border: oklch(0.404 0.032 280.2); /* surface1 */
+    --accent: oklch(0.787 0.119 304.8); /* mauve */
+    --brand-lightness: 0.75;
   }
 }
 
 @layer base {
   body {
     @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent text-background;
+  }
+
+  :focus-visible {
+    @apply rounded-xs outline-2 outline-offset-2 outline-accent;
   }
 }
 
@@ -59,9 +74,36 @@
 .blur-in > :nth-child(5) {
   --stagger: 4;
 }
+.blur-in > :nth-child(6) {
+  --stagger: 5;
+}
+
+.word-in {
+  animation: blur-in 600ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .blur-in > * {
+  .blur-in > *,
+  .word-in {
     animation: none;
   }
+}
+
+/* Vimium-style link hints, shown while pressing `f`. */
+[data-hint] {
+  position: relative;
+}
+
+[data-hint]::after {
+  content: attr(data-hint);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 0.3em;
+  border-radius: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  @apply bg-accent text-background;
 }
