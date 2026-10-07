@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 const details = "like web and mobile apps, backends and infrastructure";
 
@@ -18,10 +18,12 @@ export function BuildStuff() {
       </button>
       {open &&
         details.split(" ").map((word, index) => (
-          <span key={index} className="word-in" style={{ animationDelay: `${index * 25}ms` }}>
+          <Fragment key={index}>
             {" "}
-            {word}
-          </span>
+            <span className="word-in inline-block" style={{ animationDelay: `${index * 25}ms` }}>
+              {word}
+            </span>
+          </Fragment>
         ))}
     </>
   );
