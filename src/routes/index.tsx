@@ -17,7 +17,6 @@ const values: Array<string> = [
   "I sweat the small details, in the interface and in the code.",
   "I like getting the shape of things right, how the pieces fit together.",
   "I love refactoring. Rewriting something until it’s simpler is my favourite kind of work.",
-  "When something goes wrong, I fix why it happened so it can’t happen again. In code, with AI agents, and most things in life.",
 ];
 
 const projects: Array<Project> = [
@@ -56,6 +55,16 @@ function Home() {
       <header>
         <h1 className="font-medium">Misho Shubitidze</h1>
         <p className="text-muted-foreground">Software engineer in Tbilisi</p>
+        <p className="text-muted-foreground">
+          Currently at{" "}
+          <a
+            href="https://travlrd.com"
+            {...newTab}
+            className="underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground"
+          >
+            TRAVLRD
+          </a>
+        </p>
       </header>
 
       <p className="mt-10">
@@ -103,8 +112,11 @@ function Home() {
       </Section>
 
       <p className="mt-14 hidden text-muted-foreground pointer-fine:block">
-        Press <kbd className="font-sans font-medium text-foreground">f</kbd> to open links from your
-        keyboard.
+        Press{" "}
+        <kbd className="mx-0.5 inline-flex min-w-5 items-center justify-center rounded border border-b-2 border-border px-1 font-sans text-xs font-medium text-foreground">
+          f
+        </kbd>{" "}
+        to open links from your keyboard.
       </p>
     </main>
   );
