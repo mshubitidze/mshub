@@ -1,9 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { BuildStuff } from "@/components/build-stuff";
+import { Contributions } from "@/components/contributions";
 import { LinkHints } from "@/components/link-hints";
+import { getContributions } from "@/github.functions";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  loader: () => getContributions(),
+  component: Home,
+});
 
 type Project = {
   name: string;
@@ -48,6 +53,8 @@ const links = [
 const newTab = { target: "_blank", rel: "noreferrer" };
 
 function Home() {
+  const contributions = Route.useLoaderData();
+
   return (
     <main className="blur-in mx-auto max-w-xl px-6 py-24 text-sm leading-relaxed">
       <LinkHints />
@@ -67,17 +74,20 @@ function Home() {
         </p>
       </header>
 
-      <p className="mt-10">
-        I build <BuildStuff />, mostly with <s>TypeScript</s>{" "}
-        <a
-          href="https://effect.website"
-          {...newTab}
-          className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
-        >
-          Effect
-        </a>{" "}
-        and React. I write code mostly by talking to my laptop now.
-      </p>
+      <div className="mt-10">
+        <p>
+          I build <BuildStuff />, mostly with <s>TypeScript</s>{" "}
+          <a
+            href="https://effect.website"
+            {...newTab}
+            className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+          >
+            Effect
+          </a>{" "}
+          and React. I write code mostly by talking to my laptop now.
+        </p>
+        {contributions && <Contributions {...contributions} />}
+      </div>
 
       <Section title="What I care about">
         <ul className="flex flex-col gap-2">
