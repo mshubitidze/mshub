@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { BuildStuff } from "@/components/build-stuff";
 import { Contributions } from "@/components/contributions";
-import { LinkHints } from "@/components/link-hints";
+// import { LinkHints } from "@/components/link-hints";
 import { getContributions } from "@/github.functions";
 
 export const Route = createFileRoute("/")({
@@ -10,13 +10,13 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-type Project = {
-  name: string;
-  href: string;
-  /** Brand color; its hue and chroma tint the link on hover. */
-  brand?: string;
-  soon?: boolean;
-};
+// type Project = {
+//   name: string;
+//   href: string;
+//   /** Brand color; its hue and chroma tint the link on hover. */
+//   brand?: string;
+//   soon?: boolean;
+// };
 
 const values: Array<string> = [
   "I sweat the small details, in the interface and in the code.",
@@ -24,24 +24,24 @@ const values: Array<string> = [
   "I love refactoring. Rewriting something until it’s simpler is my favourite kind of work.",
 ];
 
-const projects: Array<Project> = [
-  {
-    name: "Agrolab",
-    href: "https://myagrolab.ge",
-    brand: "oklch(0.6 0.15 164)",
-  },
-  {
-    name: "Herio",
-    href: "https://herio.audio",
-    brand: "oklch(0.572 0.21 29.5)",
-  },
-  { name: "STOK", href: "https://stok.design", soon: true },
-  {
-    name: "TBC Business Award",
-    href: "https://tbcbusinessaward.ge",
-    brand: "oklch(0.705 0.149 234.5)",
-  },
-];
+// const projects: Array<Project> = [
+//   {
+//     name: "Agrolab",
+//     href: "https://myagrolab.ge",
+//     brand: "oklch(0.6 0.15 164)",
+//   },
+//   {
+//     name: "Herio",
+//     href: "https://herio.audio",
+//     brand: "oklch(0.572 0.21 29.5)",
+//   },
+//   { name: "STOK", href: "https://stok.design", soon: true },
+//   {
+//     name: "TBC Business Award",
+//     href: "https://tbcbusinessaward.ge",
+//     brand: "oklch(0.705 0.149 234.5)",
+//   },
+// ];
 
 const links = [
   { label: "Email", href: "mailto:misho@mshub.dev" },
@@ -57,7 +57,7 @@ function Home() {
 
   return (
     <main className="blur-in mx-auto max-w-xl px-6 py-24 text-sm leading-relaxed">
-      <LinkHints />
+      {/* <LinkHints /> */}
 
       <header>
         <h1 className="font-medium">Misho Shubitidze</h1>
@@ -97,13 +97,13 @@ function Home() {
         </ul>
       </Section>
 
-      <Section title="Freelance">
-        <ul className="flex flex-col gap-2">
-          {projects.map((project) => (
-            <ProjectRow key={project.name} project={project} />
-          ))}
-        </ul>
-      </Section>
+      {/* <Section title="Freelance"> */}
+      {/*   <ul className="flex flex-col gap-2"> */}
+      {/*     {projects.map((project) => ( */}
+      {/*       <ProjectRow key={project.name} project={project} /> */}
+      {/*     ))} */}
+      {/*   </ul> */}
+      {/* </Section> */}
 
       <Section title="Elsewhere">
         <ul className="flex flex-wrap gap-x-5 gap-y-2">
@@ -121,43 +121,43 @@ function Home() {
         </ul>
       </Section>
 
-      <p className="mt-14 hidden text-muted-foreground pointer-fine:block">
-        Press{" "}
-        <kbd className="mx-0.5 inline-flex min-w-5 items-center justify-center rounded border border-b-2 border-border px-1 font-sans text-xs font-medium text-foreground">
-          f
-        </kbd>{" "}
-        to open links from your keyboard.
-      </p>
+      {/* <p className="mt-14 hidden text-muted-foreground pointer-fine:block"> */}
+      {/*   Press{" "} */}
+      {/*   <kbd className="mx-0.5 inline-flex min-w-5 items-center justify-center rounded border border-b-2 border-border px-1 font-sans text-xs font-medium text-foreground"> */}
+      {/*     f */}
+      {/*   </kbd>{" "} */}
+      {/*   to open links from your keyboard. */}
+      {/* </p> */}
     </main>
   );
 }
 
-function ProjectRow({ project }: { project: Project }) {
-  const hostname = new URL(project.href).hostname;
-
-  return (
-    <li
-      className="flex items-baseline justify-between gap-4"
-      style={project.brand ? ({ "--brand": project.brand } as React.CSSProperties) : undefined}
-    >
-      <span>
-        {project.name}
-        {project.soon && <span className="text-muted-foreground"> (soon)</span>}
-      </span>
-      {project.soon ? (
-        <span className="text-muted-foreground/50">{hostname}</span>
-      ) : (
-        <a
-          href={project.href}
-          {...newTab}
-          className="text-muted-foreground underline decoration-border underline-offset-4 transition-colors duration-300 hover:text-brand hover:decoration-brand"
-        >
-          {hostname}
-        </a>
-      )}
-    </li>
-  );
-}
+// function ProjectRow({ project }: { project: Project }) {
+//   const hostname = new URL(project.href).hostname;
+//
+//   return (
+//     <li
+//       className="flex items-baseline justify-between gap-4"
+//       style={project.brand ? ({ "--brand": project.brand } as React.CSSProperties) : undefined}
+//     >
+//       <span>
+//         {project.name}
+//         {project.soon && <span className="text-muted-foreground"> (soon)</span>}
+//       </span>
+//       {project.soon ? (
+//         <span className="text-muted-foreground/50">{hostname}</span>
+//       ) : (
+//         <a
+//           href={project.href}
+//           {...newTab}
+//           className="text-muted-foreground underline decoration-border underline-offset-4 transition-colors duration-300 hover:text-brand hover:decoration-brand"
+//         >
+//           {hostname}
+//         </a>
+//       )}
+//     </li>
+//   );
+// }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
