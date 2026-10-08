@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import "@fontsource-variable/geist";
 
+@theme {
+  /* Strong curves: ease-out for things entering, ease-in-out for things moving in place. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
 @theme inline {
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
@@ -36,8 +42,19 @@
 }
 
 @layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
     @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  a,
+  button {
+    transition-property: color, text-decoration-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
   }
 
   ::selection {
@@ -58,7 +75,7 @@
 }
 
 .blur-in > * {
-  animation: blur-in 800ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: blur-in 800ms var(--ease-out) both;
   animation-delay: calc(var(--stagger, 0) * 80ms);
 }
 
@@ -79,7 +96,7 @@
 }
 
 .word-in {
-  animation: blur-in 600ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: blur-in 600ms var(--ease-out) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -112,7 +129,7 @@
 .contributions {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: grid-template-rows 250ms var(--ease-out);
 }
 
 .contributions[data-open="true"] {

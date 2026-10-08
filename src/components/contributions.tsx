@@ -20,7 +20,7 @@ export function Contributions({ total, weeks }: Data) {
         <svg
           viewBox="0 0 16 16"
           aria-hidden
-          className={`size-3.5 shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}
+          className={`size-3.5 shrink-0 transition-transform duration-250 ease-out ${open ? "rotate-45" : ""}`}
         >
           <path d="M8 2v12M2 8h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         </svg>

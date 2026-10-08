@@ -2,10 +2,10 @@ import { useEffect } from "react";
 
 const keys = "asdghjklqwertyuiop";
 
-/** Press `f` to label every link with a key, then press that key to follow it. Escape cancels. */
+/** Press `f` to label every link and button with a key, then press that key to click it. Escape cancels. */
 export function LinkHints() {
   useEffect(() => {
-    let hinted: Array<HTMLAnchorElement> = [];
+    let hinted: Array<HTMLElement> = [];
 
     const clear = () => {
       for (const link of hinted) delete link.dataset.hint;
@@ -20,10 +20,9 @@ export function LinkHints() {
 
       if (hinted.length === 0) {
         if (event.key !== "f") return;
-        hinted = Array.from(document.querySelectorAll<HTMLAnchorElement>("main a[href]")).slice(
-          0,
-          keys.length,
-        );
+        hinted = Array.from(
+          document.querySelectorAll<HTMLElement>("main a[href], main button"),
+        ).slice(0, keys.length);
         hinted.forEach((link, index) => (link.dataset.hint = keys[index]));
         return;
       }

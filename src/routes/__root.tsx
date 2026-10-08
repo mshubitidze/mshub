@@ -38,6 +38,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Catppuccin Latte and Mocha base, so the browser bar matches the page. Written here
+            because head() keeps only one meta per name. */}
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eff1f5" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1e1e2e" />
       </head>
       <body>
         {children}
