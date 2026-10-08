@@ -1,8 +1,10 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
+import { HeadContent, Link, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 
 import appCss from "@/styles.css?url";
+
+const description = "Software engineer in Tbilisi. I build stuff, mostly with Effect and React.";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -17,6 +19,14 @@ export const Route = createRootRoute({
       {
         title: "Misho Shubitidze",
       },
+      { name: "description", content: description },
+      // Share previews on X, iMessage, Slack and the like.
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://mshub.dev" },
+      { property: "og:title", content: "Misho Shubitidze" },
+      { property: "og:description", content: description },
+      { property: "og:image", content: "https://mshub.dev/og.png" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
@@ -31,7 +41,25 @@ export const Route = createRootRoute({
     ],
   }),
   shellComponent: RootDocument,
+  notFoundComponent: NotFound,
 });
+
+function NotFound() {
+  return (
+    <main className="blur-in mx-auto max-w-xl px-6 py-24 text-sm leading-relaxed">
+      <h1 className="font-medium">Nothing here</h1>
+      <p className="text-muted-foreground">
+        This page doesn’t exist.{" "}
+        <Link
+          to="/"
+          className="underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground"
+        >
+          Go home
+        </Link>
+      </p>
+    </main>
+  );
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -47,7 +75,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         {children}
         <TanStackDevtools
           config={{
-            position: "bottom-right",
+            position: "bottom-left",
           }}
           plugins={[
             {

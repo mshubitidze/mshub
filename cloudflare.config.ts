@@ -9,7 +9,7 @@ export default defineConfig({
     entrypoint: "@tanstack/react-start/server-entry",
     domains: ["mshub.dev", "www.mshub.dev"],
     env: {
-      /** Fine-grained token with no permissions, for the public contribution calendar. */
+      /** Classic token with no scopes; unlike a fine-grained one, it lets the calendar include private contributions. */
       GITHUB_TOKEN: bindings.secret(),
     },
   },

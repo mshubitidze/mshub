@@ -27,8 +27,9 @@ const levels: Record<string, number> = {
 };
 
 type CalendarResponse = {
-  data: {
-    user: {
+  /** GraphQL reports failures with a 200 status, no data and a list of errors. */
+  data?: {
+    user: null | {
       contributionsCollection: {
         contributionCalendar: {
           totalContributions: number;
@@ -57,11 +58,12 @@ export const getContributions = createServerFn({ method: "GET" }).handler(
         "User-Agent": "mshub.dev",
       },
       body: JSON.stringify({ query }),
-    });
-    if (!response.ok) return null;
+    }).catch(() => null);
+    if (!response?.ok) return null;
 
     const { data } = await response.json<CalendarResponse>();
-    const calendar = data.user.contributionsCollection.contributionCalendar;
+    const calendar = data?.user?.contributionsCollection.contributionCalendar;
+    if (!calendar) return null;
     const contributions: Contributions = {
       total: calendar.totalContributions,
       weeks: calendar.weeks.map((week) =>
