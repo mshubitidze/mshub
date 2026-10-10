@@ -47,16 +47,14 @@ export const Route = createRootRoute({
 function NotFound() {
   return (
     <main className="blur-in mx-auto max-w-xl px-6 py-24 text-sm leading-relaxed">
-      <h1 className="font-medium">Nothing here</h1>
-      <p className="text-muted-foreground">
-        This page doesn’t exist.{" "}
-        <Link
-          to="/"
-          className="underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground"
-        >
-          Go home
-        </Link>
-      </p>
+      <h1 className="font-medium">404</h1>
+      <p className="text-muted-foreground">Page not found.</p>
+      <Link
+        to="/"
+        className="underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground"
+      >
+        Go home
+      </Link>
     </main>
   );
 }
