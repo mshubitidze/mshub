@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 
-const details = "like web and mobile apps, backends and infrastructure";
+const details = "like web, mobile and desktop apps, backends and infrastructure";
 
 /** One wave period, in px. The path is drawn a few periods wider than the word so it can slide. */
 const wavelength = 6;
